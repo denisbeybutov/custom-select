@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Custom Select</title>
 </head>
 <body>
-    Custom Select
+    <div class="container" data-close="true">
+        <div class="select" id="select">
+            <button class="select__button" id="select__button">
+                <p class="select__button-text" id="select__button-text">Menu Label</p>
+                <img class="select__button-down" src="./img/arrow-down.svg" alt="arrow down" id="arrow-down">
+                <img class="select__button-up hidden" src="./img/arrow-up.svg" alt="arrow down" id="arrow-up">
+            </button>
+            <ul class="select__list hidden-list" id="select__list">
+                <li class="select__item">Menu Label</li>
+                <li class="select__item">Label1</li>
+                <li class="select__item">Label2</li>
+                <li class="select__item">Label3</li>
+                <li class="select__item">Label4</li>
+                <li class="select__item">Label5</li>
+            </ul>
+        </div>
+        <div class="buttons" data-close="true">
+            <button class="button-color select__button" id="grey">Grey items hover</button>
+            <button class="button-color select__button" id="blue">Blue items hover</button>
+        </div>
+        
+    </div>
+
+    
+
+    <script src="./script.js"></script>
 </body>
 </html>

@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "Poppins Medium";
+    src: url('./fonts/Poppins-Medium.woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+:root {
+    --background-color: #fff;
+    --border-radius: 10px;
+    --item-color-blue: #C4CBDF;
+}
+
+.item-hover-grey {
+    --item-color-blue: rgb(200, 201, 206);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 12px;
+    background-color: rgb(222, 222, 222);
+    font-family: "Poppins Medium";
+}
+.hidden {
+    display: none;
+    
+}
+
+ul,ol,li {
+    list-style: none;
+}
+
+
+.container {
+    padding: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    border-radius: var(--border-radius);
+    width: 260px;
+    overflow: hidden;
+    background-color: var(--background-color);
+    height: 100%;
+    transition: gap .3s;
+}
+
+.select.open {
+    gap: 8px;
+}
+
+.select__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 42px;
+    padding: 12px 18px;
+    background-color: var(--background-color);
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: var(--border-radius);
+    font-family: "Poppins Medium";
+    transition: border .7s, border-radius .7s;
+}
+
+.select__button:hover {
+    border: 1px solid rgb(140, 140, 248);
+}
+
+.select__button.open {
+    border: 1px solid rgb(140, 140, 248);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.select__button:hover,
+.select__item {
+    cursor: pointer;
+}
+
+.select__button-text {
+    font-size: 12px;
+}
+
+.select__list.hidden-list .select__item {
+    padding: 0 24px;
+    height: 0px;
+    opacity: 0;
+}
+.select__list .select__item {
+    padding: 12px 24px;
+    height: 42px;
+    opacity: 1;
+    transition: height .4s, padding .4s, opacity .4s;
+}
+
+.select__item:hover {
+    background-color: var(--item-color-blue);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+}
+
+.button-color {
+    height: 42px;
+    width: 170px;
+    justify-content: center;
+}
