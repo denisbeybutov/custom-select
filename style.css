@@ -7,6 +7,12 @@
 
 :root {
     --background-color: #fff;
+    --border-radius: 10px;
+    --item-color-blue: #C4CBDF;
+}
+
+.item-hover-grey {
+    --item-color-blue: rgb(200, 201, 206);
 }
 
 * {
@@ -17,11 +23,12 @@
 
 body {
     font-size: 12px;
-    background-color: grey;
+    background-color: rgb(222, 222, 222);
     font-family: "Poppins Medium";
 }
 .hidden {
     display: none;
+    
 }
 
 ul,ol,li {
@@ -31,14 +38,23 @@ ul,ol,li {
 
 .container {
     padding: 10%;
-
+    display: flex;
+    gap: 20px;
 }
 
 .select {
-    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 8px; */
+    border-radius: var(--border-radius);
     width: 260px;
     overflow: hidden;
     background-color: var(--background-color);
+    height: 100%;
+}
+
+.select.open {
+    gap: 8px;
 }
 
 .select__button {
@@ -49,10 +65,19 @@ ul,ol,li {
     height: 42px;
     padding: 12px 18px;
     background-color: var(--background-color);
-    border: none;
-    border-radius: 16px;
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: var(--border-radius);
     font-family: "Poppins Medium";
-    
+    transition: border .7s, border-radius .7s;
+}
+
+.select__button:hover {
+    border: 1px solid rgb(140, 140, 248);
+}
+
+.select__button.open {
+    border: 1px solid rgb(140, 140, 248);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .select__button:hover,
@@ -64,6 +89,31 @@ ul,ol,li {
     font-size: 12px;
 }
 
-.select__item {
+.select__list.hidden-list .select__item {
+    padding: 0 24px;
+    height: 0px;
+    opacity: 0;
+}
+.select__list .select__item {
     padding: 12px 24px;
+    height: 42px;
+    opacity: 1;
+    transition: height .4s, padding .4s, opacity .4s;
+}
+
+.select__item:hover {
+    background-color: var(--item-color-blue);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+}
+
+.button-color {
+    height: 42px;
+    width: 170px;
+    justify-content: center;
 }
