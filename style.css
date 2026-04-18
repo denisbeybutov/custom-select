@@ -45,12 +45,13 @@ ul,ol,li {
 .select {
     display: flex;
     flex-direction: column;
-    /* gap: 8px; */
+    gap: 0px;
     border-radius: var(--border-radius);
     width: 260px;
     overflow: hidden;
     background-color: var(--background-color);
     height: 100%;
+    transition: gap .3s;
 }
 
 .select.open {
